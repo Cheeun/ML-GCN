@@ -4,12 +4,20 @@ PyTorch implementation of [Multi-Label Image Recognition with Graph Convolutiona
 
 
 ### Requirements
-Please, install the following packages
+1. Install conda environment with environment.yml
+```sh
+conda env create -f environment.yml --name MLGCN
+conda activate MLGCN
+```
+2. OR manually install the following packages
 - numpy
 - torch-0.3.1
 - torchnet
 - torchvision-0.2.0
 - tqdm
+
+### Download Data
+save COCO2014 dataset from http://cocodataset.org/ in directory data/coco/data
 
 ### Download pretrain models
 checkpoint/coco ([GoogleDrive](https://drive.google.com/open?id=1ivLi1Rc-dCUmN1ProcMk76zxF1DSvlIk))
@@ -29,19 +37,16 @@ or
 - `evaluate`: evaluate model on validation set
 - `resume`: path to checkpoint
 
-### Demo VOC 2007
-```sh
-python3 demo_voc2007_gcn.py data/voc --image-size 448 --batch-size 32 -e --resume checkpoint/voc/voc_checkpoint.pth.tar
-```
-
 ### Demo COCO 2014
 ```sh
-python3 demo_coco_gcn.py data/coco --image-size 448 --batch-size 32 -e --resume checkpoint/coco/coco_checkpoint.pth.tar
+bash demo.sh
+```
+OR
+```sh
+python3 demo_coco_gcn.py data/coco --image-size 448 --batch-size 8 -e --resume checkpoint/coco/coco_checkpoint.pth.tar
 ```
 
-## Citing this repository
-If you find this code useful in your research, please consider citing us:
-
+## Original Repository
 ```
 @inproceedings{ML-GCN_CVPR_2019,
 author = {Zhao-Min Chen and Xiu-Shen Wei and Peng Wang and Yanwen Guo},
@@ -52,6 +57,4 @@ year = {2019}
 ```
 ## Reference
 This project is based on https://github.com/durandtibo/wildcat.pytorch
-
-## Tips
-If you have any questions about our work, please do not hesitate to contact us by emails.
+This code is based on https://github.com/Megvii-Nanjing/ML-GCN
