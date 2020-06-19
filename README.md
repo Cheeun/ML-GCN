@@ -4,7 +4,7 @@ PyTorch implementation of [Multi-Label Image Recognition with Graph Convolutiona
 
 
 ### Requirements
-1. Install conda environment with environment.yml
+1. Install conda environment with environment.yml (Recommended!)
 ```sh
 conda env create -f environment.yml --name MLGCN
 conda activate MLGCN
