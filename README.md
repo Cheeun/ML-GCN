@@ -18,6 +18,7 @@ conda activate MLGCN
 
 ### Download Data
 save COCO2014 dataset from http://cocodataset.org/ in directory data/coco/data
+```bash
 ML-GCN
 |-- README.md
 |-- environment.yml
@@ -33,7 +34,7 @@ ML-GCN
     |   |-- tmp
     |   |-- ...
     |-- voc
-
+```
 ### Download pretrain models
 checkpoint/coco ([GoogleDrive](https://drive.google.com/open?id=1ivLi1Rc-dCUmN1ProcMk76zxF1DSvlIk))
 
