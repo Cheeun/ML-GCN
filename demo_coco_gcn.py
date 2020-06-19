@@ -2,8 +2,11 @@ import argparse
 from engine import *
 from models import *
 from coco import *
+# from coco import COCO2014
 from util import *
 
+import torch
+import torch.nn as nn
 
 parser = argparse.ArgumentParser(description='WILDCAT Training')
 parser.add_argument('data', metavar='DIR',
@@ -37,7 +40,7 @@ parser.add_argument('--resume', default='', type=str, metavar='PATH',
 parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
                     help='evaluate model on validation set')
 
-
+ 
 def main_coco():
     global args, best_prec1, use_gpu
     args = parser.parse_args()
