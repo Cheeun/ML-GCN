@@ -1,9 +1,11 @@
 import torchvision.models as models
 from torch.nn import Parameter
 from util import *
+# from util import gen_A, gen_adj
 import torch
 import torch.nn as nn
-
+import math
+__all__=['GraphConvolution', 'GCNResnet', 'gcn_resnet101']
 class GraphConvolution(nn.Module):
     """
     Simple GCN layer, similar to https://arxiv.org/abs/1609.02907
@@ -42,6 +44,7 @@ class GraphConvolution(nn.Module):
 
 class GCNResnet(nn.Module):
     def __init__(self, model, num_classes, in_channel=300, t=0, adj_file=None):
+        # t : threshold for binarizing A
         super(GCNResnet, self).__init__()
         self.features = nn.Sequential(
             model.conv1,
